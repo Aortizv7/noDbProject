@@ -1,0 +1,27 @@
+.product_positioning{
+    display: inline-block;
+    margin-bottom:20px;
+      margin-left:15px;  
+}
+.product_view{
+    width:320px;
+    height:240px;
+    background:#fff3e6;
+    border:3px solid black;
+    display: flex;
+    justify-content:column; 
+    padding:5px;
+    border-radius: 10px;
+}
+.image{
+    width:105px;
+    height:105px;
+    margin-top:50px;
+    margin-left:10px;
+    border:2px #ff9c33 dotted;
+}
+.product_info{
+    list-style: none;
+    font-family:'lucida grande';
+    line-height:25px;
+}
