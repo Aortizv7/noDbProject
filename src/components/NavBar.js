@@ -30,10 +30,7 @@ export default class NavBar extends Component {
         })
     }
     componentDidMount() {
-        console.log('hello')
-
         getAll().then(response => {
-            console.log(response.data);
             this.setState({
                 makeupToDisplay: response.data
             })
@@ -65,14 +62,14 @@ export default class NavBar extends Component {
             <div>
                 <div className='nav_bar'>
                     <div className='text'>
-                    <h1>WELCOME! What are you searchig for? </h1></div>
+                        <h1>WELCOME! What are you searchig for? </h1></div>
                     <div className='input'>
-                    <input onChange={(e) => this.handleInput(e)}
-                        className='input_box'
-                        placeholder='search by brand or product_type...'
-                        type="text" />
-                    <button onClick={() => this.handleClick()} className='search_btn'>Search</button>
-                </div>
+                        <input onChange={(e) => this.handleInput(e)}
+                            className='input_box'
+                            placeholder='search by brand or product_type...'
+                            type="text" />
+                        <button onClick={() => this.handleClick()} className='search_btn'>Search</button>
+                    </div>
                 </div>
                 {listOfMakeup}
             </div>

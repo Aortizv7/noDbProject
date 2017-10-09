@@ -1,7 +1,8 @@
 .product_positioning{
     display: inline-block;
     margin-bottom:20px;
-      margin-left:15px;  
+    margin-left:15px;
+    margin-top:150px;  
 }
 .product_view{
     width:320px;
