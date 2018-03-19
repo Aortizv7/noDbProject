@@ -1,6 +1,7 @@
 const express = require('express');
 app = express();
 bodyParser = require('body-parser');
+cors = require('cors');
 axios = require('axios');
 port = 3000;
 baseURL = `/api/makeup`;
@@ -8,7 +9,7 @@ let makeupObj = [];
 
 
 app.use(bodyParser.json());
-
+app.use(cors());
 
 app.get(baseURL, (req, res) => {
       if (makeupObj.length === 0) {
