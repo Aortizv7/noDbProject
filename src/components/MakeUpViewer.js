@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './MakeUpViewer.css';
+
+
 export default class MakeUpViewer extends Component {
     render(props) {
         return (

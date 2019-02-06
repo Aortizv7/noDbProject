@@ -26,7 +26,8 @@ export default class NavBar extends Component {
         this.setState({
             search: this.state.makeupToDisplay.filter((item) => {
                 return item.brand === this.state.userInput || item.product_type === this.state.userInput
-            })
+            }),
+            userInput:''
         })
     }
     componentDidMount() {
@@ -43,7 +44,7 @@ export default class NavBar extends Component {
         if (this.state.search.length === 0) {
             var listOfMakeup = this.state.makeupToDisplay.map((item, index) => {
                 return (
-                    <MakeUpViewer name={item.name} brand={item.brand} productType={item.product_type}
+                    <MakeUpViewer key={index} name={item.name} brand={item.brand} productType={item.product_type}
                         image={item.image_link} price={item.price} productLink={item.product_link}
                     />
                 )
@@ -51,7 +52,7 @@ export default class NavBar extends Component {
         } else {
             var listOfMakeup = this.state.search.map((item, index) => {
                 return (
-                    <MakeUpViewer name={item.name} brand={item.brand} productType={item.product_type}
+                    <MakeUpViewer key={index} name={item.name} brand={item.brand} productType={item.product_type}
                         image={item.image_link} price={item.price} productLink={item.product_link}
                     />
                 )
@@ -62,13 +63,14 @@ export default class NavBar extends Component {
             <div>
                 <div className='nav_bar'>
                     <div className='text'>
-                        <h1>WELCOME! What are you searchig for? </h1></div>
+                        <h1>WELCOME! What are you searchig for? </h1>
+                    </div>
                     <div className='input'>
                         <input onChange={(e) => this.handleInput(e)}
                             className='input_box'
                             placeholder='search by brand or product_type...'
                             type="text" />
-                        <button onClick={() => this.handleClick()} className='search_btn'>Search</button>
+                        <button onClick={this.handleClick} className='search_btn'>Search</button>
                     </div>
                 </div>
                 {listOfMakeup}
